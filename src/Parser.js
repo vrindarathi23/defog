@@ -58,7 +58,7 @@ const downloadVideo = async (downloadUrl, outputFile) => {
     
     try {
       const downloadUrl = await getDownloadUrl(videoUrl);
-      await downloadVideo(downloadUrl, "test.mp4");
+      await downloadVideo(downloadUrl, "downloaded_videos/test.mp4");
     } catch (error) {
       console.error('Failed to download the video:', error);
     }
