@@ -1,9 +1,11 @@
+# The following file generates a transcript for any given videos
 import assemblyai as aai
 
-aai.settings.api_key = "50df82bede344799beffd4068d8cfb15"
+aai.settings.api_key = # PERSONAL KEY REDACTED
 
 transcriber = aai.Transcriber()
 
+# Transcriber class: generates text files for given videos
 class Transcriber:
     def __init__(self):
         pass
@@ -18,13 +20,14 @@ class Transcriber:
             print(transcript.text, file=f)
             for utterance in transcript.utterances:
                 print(f"Speaker {utterance.speaker}: {utterance.text}", file=f)
+        if os.path.exists(audio_file):
+            os.remove(audio_file)
 
-# Defining main function
+# Defining main function for demonstration purposes
 def main():
     transcribe_obj = Transcriber()
     transcribe_obj.transcribe("downloaded_videos/test.mp4", "transcribed_videos/test.txt")
 
-# Using the special variable 
 # __name__
 if __name__=="__main__":
     main()
