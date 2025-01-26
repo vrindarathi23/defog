@@ -1,6 +1,6 @@
 import textrazor
 
-textrazor.api_key = "a619be13c0b5ae408788b20383e48333db966df44f00a006d70eaaa3"
+textrazor.api_key = ""
 
 # we will want to extract main topics & entities
 client = textrazor.TextRazor(extractors=["entities", "topics"])
