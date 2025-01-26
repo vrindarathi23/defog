@@ -1,6 +1,8 @@
+// Downloads video from social media locally
 const axios = require('axios');
 const fs = require('fs');
 
+// Generates download URL from x-rapidapi-key
 const getDownloadUrl = async (videoUrl) => {
     const options = {
       method: 'GET',
@@ -9,7 +11,7 @@ const getDownloadUrl = async (videoUrl) => {
         videoUrl: videoUrl,
       },
       headers: {
-        'x-rapidapi-key': 'b1e137cf59msh8d674ca76dd6fbbp16d597jsn490493f5e85a',
+        'x-rapidapi-key': // PRIVATE KEY REDACTED,
         'x-rapidapi-host': 'tiktok-video-downloader-api.p.rapidapi.com',
       },
     };
@@ -28,6 +30,7 @@ const getDownloadUrl = async (videoUrl) => {
     }
   };
 
+// Downloads video from the url
 const downloadVideo = async (downloadUrl, outputFile) => {
     try {
         const videoStream = await axios({
